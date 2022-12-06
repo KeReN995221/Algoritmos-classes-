@@ -1,0 +1,43 @@
+ 
+#Exercício 07: Uma pessoa possui um nome, uma data de nascimento (dia, mês e ano) e uma hora de
+# nascimento (hora e minuto). Implemente um programa que seja capaz de representar uma pessoa (utilizando
+# registros).
+
+class Data:
+    def __init__(self):
+        self.dia = 0
+        self.mes = 0
+        self.ano = 0
+class Horario:
+    def __init__(self):
+        self.hora = 0
+        self.minuto = 0
+
+class Pessoa:
+    def __init__ (self):
+        self.nome = ""
+        self.data = Data()
+        self.hora_nascimento = Horario()
+
+
+def exibirPessoa(pessoa):
+    # idade = calcularIdade()
+    print("Pessoa| \nNome: ",pessoa.nome, "\nData de Nascimento: ", pessoa.data.dia,"/",pessoa.data.mes,"/",pessoa.data.ano,"\nHora e minuto do nascimento: ", pessoa.hora_nascimento.hora,":",pessoa.hora_nascimento.minuto)
+
+def registrar():
+    pessoa = Pessoa()
+    print("--------------------------")
+    pessoa.nome = input("Insira o nome da pessoa que deseja registrar: ")
+    pessoa.data.dia = int(input("Insira o dia do nascimento: "))
+    pessoa.data.mes = int(input("Insira o mes do nascimento: "))
+    pessoa.data.ano = int(input("Insira o ano do nascimento: "))
+    pessoa.hora_nascimento.hora = int(input("Informe a hora do nascimento: "))
+    pessoa.hora_nascimento.minuto = int(input("Informe os minutos do nascimento: "))
+    return pessoa
+
+listaPessoas = [Pessoa()] * 2 #criando um vetor com o tamanho escolhido para listaras pessoas
+for i in range (0, len(listaPessoas)): 
+    listaPessoas[i] = registrar() #colocando os registros dentro do vetor, chamando a função registrar
+
+for k in range (0, len(listaPessoas)):
+    exibirPessoa(listaPessoas[k]) () #exibindo o vetor chamando a função exibir
